@@ -1,0 +1,13 @@
+---
+title: "Ozone embed"
+author: "James Goldie"
+date: "2022-03-11"
+page-layout: custom
+---
+
+```{ojs}
+// literally just importing the stuff from article.qmd
+import { countrySelect, ozoneChart } from "./article.qmd"
+countrySelect
+ozoneChart
+```
