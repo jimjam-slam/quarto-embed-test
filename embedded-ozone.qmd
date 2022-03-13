@@ -4,14 +4,19 @@ subtitle: "With some interesting comment on what the data says."
 author: "James Goldie"
 date: "2022-03-11"
 page-layout: custom
+theme: none
+css: embed-style.css
 execute:
   echo: false
 ---
 
 ```{ojs}
+
 // literally just importing the stuff from article.qmd
 // (don't forget to use `viewof` for the controls!)
 import { viewof countrySelect, ozoneChart } from "./article.qmd"
-viewof countrySelect
-ozoneChart
+
+viewof countrySelect;
+ozoneChart;
+
 ```
