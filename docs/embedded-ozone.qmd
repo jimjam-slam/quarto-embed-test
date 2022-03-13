@@ -4,8 +4,6 @@ subtitle: "With some interesting comment on what the data says."
 author: "James Goldie"
 date: "2022-03-11"
 page-layout: custom
-execute:
-  echo: false
 ---
 
 ```{ojs}

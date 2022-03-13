@@ -11,8 +11,11 @@ Quarto looks really cool, but I want to see if I can do an analysis in R with it
 I'm going to analyse the consumption of ozone-depleting substances, courtest of [Our World In Data](https://ourworldindata.org/ozone-layer):
 
 ```{r import}
-library(tidyverse)
-library(here)
+#| echo: FALSE
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(here)
+})
 
 ozone <-
   read_csv(here("data", "o3-depleting-substances.csv")) %>%
@@ -20,7 +23,7 @@ ozone <-
 
 ojs_define(ozone = ozone)
 ojs_define(country_list = ozone$country %>% unique())
-ozone
+
 ```
 
 ## The visualisation
@@ -44,4 +47,4 @@ ozoneChart = Plot.plot({
 });
 ```
 
-Nice! Now check out `embedded-ozone.qmd` for the embeddable version!
+Nice! Now check out [`embedded-ozone.qmd`](embedded-ozone.html) for the embeddable version!
