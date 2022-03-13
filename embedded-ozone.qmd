@@ -7,7 +7,7 @@ page-layout: custom
 
 ```{ojs}
 // literally just importing the stuff from article.qmd
-import { countrySelect, ozoneChart } from "./article.qmd"
-countrySelect
+import { viewof countrySelect, ozoneChart } from "./article.qmd"
+viewof countrySelect
 ozoneChart
 ```
