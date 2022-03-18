@@ -5,7 +5,7 @@ author: "James Goldie"
 date: "2022-03-11"
 page-layout: custom
 theme: none
-css: embed-style.css
+css: style/embed-style.css
 execute:
   echo: false
 ---

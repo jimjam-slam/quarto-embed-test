@@ -2,6 +2,7 @@
 title: "My quick Quarto embedding test"
 author: "James Goldie"
 date: "2022-03-11"
+theme: style/article.scss
 ---
 
 Quarto looks really cool, but I want to see if I can do an analysis in R with it, send that visualisation to Observable JS, and then pass a version of the visusalisation onto a separate HTML file so that I have an embeddable version. Let's give it a go!
@@ -30,7 +31,17 @@ ojs_define(country_list = ozone$country %>% unique())
 
 Okay, now let's chart it using Observable Plot! And to make things a little trickier, let's throw a dropdown menu for the country in. To make things easier for myself, I grabbed the list of country names from the data above in R, rather than trying to do that kind of analysis in JS (although I guess I could just do it with `d3`, as the [Observable Inputs README](https://github.com/observablehq/inputs#Select) demonstrates).
 
-```{ojs ausplot}
+```{ojs}
+
+// TODO - I want to try adding a feature only supported by obs plot 0.4.1!
+
+// TODO - i also want to try implementing my own tooltips and adding them to
+// observablehq.com so that they can be implemented using an open licence.
+// can i use the `title` attribute? is it natively added by plot? 
+// inspo:
+// - https://www.d3-graph-gallery.com/graph/interactivity_tooltip.html
+// - https://chartio.com/resources/tutorials/how-to-show-data-on-mouseover-in-d3js
+
 viewof countrySelect = Inputs.select(country_list, {label: "Pick a country:"});
 
 filteredOzone = transpose(ozone).filter(function(row) {
@@ -44,7 +55,8 @@ ozoneChart = Plot.plot({
     // bars of consumption p. yr
     Plot.barY(filteredOzone, {x: "year", y: "consumption"})
   ]
-});
+})
 ```
+
 
 Nice! Now check out [`embedded-ozone.qmd`](embedded-ozone.html) for the embeddable version!
